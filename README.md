@@ -14,7 +14,7 @@ Follow this [link](https://docs.docker.com/engine/installation/) to Docker offic
 > - `sudo service docker start`
 
 #### For Microsoft Internal only
-Microsoft IT blocked the Google public DNS address 8.8.8.8. The Docker Ubuntu base image could not resolve DNS. You will need to change the systemd config to use the Microsoft internal DNS. Follow the steps below to config the DNS. For more details, please refer to this [doc](https://docs.docker.com/engine/admin/systemd/#custom-docker-daemon-options).
+You could skip this if you are just want to run the Service Fabric Docker image. This is only an relevant issue for developers building the image. Microsoft IT blocked the Google public DNS address 8.8.8.8. The Docker Ubuntu base image uses the Google public DNS, so it could not resolve DNS. You will need to change the systemd config to use the Microsoft internal DNS. Follow the steps below to config the DNS. For more details, please refer to this [doc](https://docs.docker.com/engine/admin/systemd/#custom-docker-daemon-options).
 
 > - `sudo mkdir /etc/systemd/system/docker.service.d`
 > - `sudo vim /etc/systemd/system/docker.service.d/docker.conf`
